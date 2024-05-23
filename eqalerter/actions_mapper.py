@@ -16,7 +16,7 @@ class ActionsMapper:
         self.actions = {}
         with open(config_file, 'r') as stream:
             try:
-                action_map = yaml.load_full(stream).items()
+                action_map = yaml.full_load(stream).items()
                 for key,value in action_map:
                     # print("DEBUG_MAPPER: %s=%s" % (key, value))
                     self.actions[key] = Action(value)
